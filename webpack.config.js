@@ -44,8 +44,7 @@ module.exports = (env = {}) => {
     },
     output: {
       path: path.join(__dirname, "dist"),
-      filename: "[name].[chunkhash].js",
-      publicPath: "/"
+      filename: "[name].[chunkhash].js"
     },
     module: {
       rules: [
