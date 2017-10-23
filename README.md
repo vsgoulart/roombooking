@@ -3,7 +3,7 @@
 
 ## How run the project
 
-Make sure you have Node.JS installed. Then clone this repository, go to the project folder and run ```npm install``` or ```yarn install```. After all dependencies are installed run ```npm serve``` to run a local server on.
+Make sure you have Node.JS installed. Then clone this repository, go to the project folder and run ```npm install``` or ```yarn install```. After all dependencies are installed run ```npm serve``` to run a local server on ```http://localhost:8080/```.
 
 ## Main libraries/tools used and why I chose them
 
