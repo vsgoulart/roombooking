@@ -5,21 +5,18 @@ export const convertInputDateToUNIXTime = date => new Date(date).getTime();
 export const convertUNIXTimeToInputDate = date =>
   new Date(date).toISOString().split("T")[0];
 
-export const isDateOnInterval = (interval, date) => {
-  const lowerBound = {
-    hour: getHour(getLowerLimit(interval)),
-    minutes: getMinutes(getLowerLimit(interval))
-  };
-  const upperBound = {
-    hour: getHour(getUpperLimit(interval)),
-    minutes: getMinutes(getUpperLimit(interval))
-  };
-  const targetTime = { hour: date.getHours(), minutes: date.getMinutes() };
+export const isDateOnInterval = (intervalDate, interval, targetTime) => {
+  let lowerBound = new Date(intervalDate);
+  lowerBound.setHours(getHour(getLowerLimit(interval)));
+  lowerBound.setMinutes(getMinutes(getLowerLimit(interval)));
+  lowerBound = lowerBound.getTime();
 
-  return (
-    isDateOnLowerBound(targetTime, lowerBound) &&
-    isDateOnUpperBound(targetTime, upperBound)
-  );
+  let upperBound = new Date(intervalDate);
+  upperBound.setHours(getHour(getUpperLimit(interval)));
+  upperBound.setMinutes(getMinutes(getUpperLimit(interval)));
+  upperBound = upperBound.getTime();
+
+  return lowerBound <= targetTime && targetTime <= upperBound;
 };
 
 const getLowerLimit = interval => interval.split(" - ")[0];

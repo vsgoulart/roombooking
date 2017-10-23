@@ -33,7 +33,10 @@ class Search extends Component {
     let filteredRooms = filterRooms(rooms, roomFilter);
 
     if (availableNowFilter) {
-      filteredRooms = getAvailableRooms(filteredRooms);
+      filteredRooms = getAvailableRooms(
+        filteredRooms,
+        convertInputDateToUNIXTime(selectedDate)
+      );
     }
 
     if (areRoomsFetching) {
