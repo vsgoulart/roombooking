@@ -19,4 +19,4 @@ For the dev environment
 * Jest - for testing
 * PostCSS - to handle CSS
 
-PS: I've separated the project like in the [description](https://challenges.1aim.com/roombooking/)
+PS: I've separated the project like in the [description](https://challenges.1aim.com/roombooking/) (room search, room information and room booking), but only made the search because I thought it was enough to show my skills.
