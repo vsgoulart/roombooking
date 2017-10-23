@@ -18,3 +18,5 @@ For the dev environment
 * Babel - to transpile JSX, ES2016 and ES2015 to current valid JS
 * Jest - for testing
 * PostCSS - to handle CSS
+
+PS: I've separated the project like in the [description](https://challenges.1aim.com/roombooking/)
