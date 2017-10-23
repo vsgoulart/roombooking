@@ -1,5 +1,9 @@
 "use strict";
 
 module.exports = {
-  plugins: [require("precss"), require("autoprefixer")]
+  plugins: [
+    require("precss"),
+    require("postcss-hexrgba"),
+    require("autoprefixer")
+  ]
 };

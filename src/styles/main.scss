@@ -1,0 +1,68 @@
+@import "palette.scss";
+@import "fonts.scss";
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  font-family: $body-font;
+  width: 100%;
+  color: #555;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font;
+}
+
+header {
+  background: $red;
+  padding: 20px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+
+  a:link,
+  a:visited,
+  a:hover,
+  a:focus,
+  a:active {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  h1 {
+    margin: 0;
+  }
+}
+
+main {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 600px) {
+  header {
+    text-align: left;
+  }
+}

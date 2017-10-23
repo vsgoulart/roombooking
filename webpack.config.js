@@ -7,7 +7,19 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
 
-const vendor = ["react", "react-dom", "redux", "react-redux", "whatwg-fetch"];
+const vendor = [
+  "react",
+  "react-dom",
+  "redux",
+  "react-redux",
+  "whatwg-fetch",
+  "react-router-dom",
+  "redux-logger",
+  "redux-thunk",
+  "prop-types",
+  "normalize.css",
+  "react-transition-group"
+];
 let devtool = "eval-source-map";
 const extensions = [".js", ".jsx", ".css", ".scss", ".json"];
 let plugins = [
@@ -44,8 +56,10 @@ module.exports = (env = {}) => {
     },
     output: {
       path: path.join(__dirname, "dist"),
-      filename: "[name].[chunkhash].js"
+      filename: "[name].[chunkhash].js",
+      publicPath: process.env.PUBLIC_PATH
     },
+    devtool,
     module: {
       rules: [
         {
