@@ -40,7 +40,7 @@ describe("./src/utils/date.js functions", () => {
         "10:13 - 19:00",
         new Date(2017, 9, 23, 19, 0).getTime()
       )
-    ).toBe(true);
+    ).toBe(false);
     expect(
       isDateOnInterval(
         new Date(2017, 9, 23).getTime(),

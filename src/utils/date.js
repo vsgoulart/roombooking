@@ -16,7 +16,7 @@ export const isDateOnInterval = (intervalDate, interval, targetTime) => {
   upperBound.setMinutes(getMinutes(getUpperLimit(interval)));
   upperBound = upperBound.getTime();
 
-  return lowerBound <= targetTime && targetTime <= upperBound;
+  return lowerBound <= targetTime && targetTime + 1000 * 60 * 60 <= upperBound;
 };
 
 const getLowerLimit = interval => interval.split(" - ")[0];
@@ -26,23 +26,3 @@ const getUpperLimit = interval => interval.split(" - ")[1];
 const getHour = time => parseInt(time.split(":")[0]);
 
 const getMinutes = time => parseInt(time.split(":")[1]);
-
-const isDateOnLowerBound = (date, lowerBound) => {
-  if (lowerBound.hour < date.hour) {
-    return true;
-  } else if (lowerBound.hour == date.hour) {
-    return lowerBound.minutes <= date.minutes;
-  } else {
-    return false;
-  }
-};
-
-const isDateOnUpperBound = (date, upperBound) => {
-  if (upperBound.hour > date.hour) {
-    return true;
-  } else if (upperBound.hour == date.hour) {
-    return upperBound.minutes >= date.minutes;
-  } else {
-    return false;
-  }
-};

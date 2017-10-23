@@ -44,7 +44,5 @@ export const filterRooms = (rooms, filter) => {
 
 export const getAvailableRooms = (rooms, roomsDate) =>
   rooms.filter(room =>
-    room.avail.some(range =>
-      isDateOnInterval(roomsDate, range, Date.now() + 1000 * 60 * 60)
-    )
+    room.avail.some(range => isDateOnInterval(roomsDate, range, Date.now()))
   );
